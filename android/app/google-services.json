@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "172548870286",
+    "project_id": "foodecommerce-dce18",
+    "storage_bucket": "foodecommerce-dce18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172548870286:android:fd20bd685cbd64647ff9df",
+        "android_client_info": {
+          "package_name": "com.example.flutter_ecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwuJekp2ylDv3f5qocCPTDtJLd0XPAnJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
