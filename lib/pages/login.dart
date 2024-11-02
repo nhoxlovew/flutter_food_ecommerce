@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/pages/bottomnav.dart';
+import 'package:flutter_ecommerce/pages/forgotpassword.dart';
 import 'package:flutter_ecommerce/pages/signup.dart';
 import 'package:flutter_ecommerce/widget/widget_support.dart';
 
@@ -142,12 +143,21 @@ class _LogInState extends State<LogIn> {
                             SizedBox(
                               height: 20.0,
                             ),
-                            Container(
-                                alignment: Alignment.topRight,
-                                child: Text(
-                                  "Quên mật khẩu?",
-                                  style: AppWidget.semiBoldTextFeildStyle(),
-                                )),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ForgotPassword()));
+                              },
+                              child: Container(
+                                  alignment: Alignment.topRight,
+                                  child: Text(
+                                    "Quên mật khẩu?",
+                                    style: AppWidget.semiBoldTextFeildStyle(),
+                                  )),
+                            ),
                             SizedBox(
                               height: 80.0,
                             ),
