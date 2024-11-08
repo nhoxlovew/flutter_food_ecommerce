@@ -3,7 +3,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/pages/bottomnav.dart';
 import 'package:flutter_ecommerce/pages/login.dart';
+import 'package:flutter_ecommerce/services/database.dart';
+import 'package:flutter_ecommerce/services/shared_pref.dart';
 import 'package:flutter_ecommerce/widget/widget_support.dart';
+import 'package:random_string/random_string.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -14,6 +17,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   String email = "", password = "", name = "";
+
   TextEditingController namecontroller = new TextEditingController();
   TextEditingController passwordcontroller = new TextEditingController();
   TextEditingController mailcontroller = new TextEditingController();
@@ -31,9 +35,23 @@ class _SignUpState extends State<SignUp> {
               "Đăng ký thành công!",
               style: TextStyle(fontSize: 20.0),
             ))));
+        String Id = randomAlphaNumeric(10);
+        Map<String, dynamic> addUserInfo = {
+          "Name": namecontroller.text,
+          "Email": mailcontroller.text,
+          "Wallet": "0",
+          "Id": Id,
+        };
+        await DatabaseMethods().addUserDetail(addUserInfo, Id);
+        await SharedPreferenceHelper().saveUserName(namecontroller.text);
+        await SharedPreferenceHelper().saveUserEmail(mailcontroller.text);
+        await SharedPreferenceHelper().saveUserWallet('0');
+        await SharedPreferenceHelper().saveUserId(Id);
+
         Navigator.pushReplacement(
             // ignore: use_build_context_synchronously
-            context, MaterialPageRoute(builder: (context) => BottomNav()));
+            context,
+            MaterialPageRoute(builder: (context) => BottomNav()));
       } on FirebaseException catch (e) {
         if (e.code == "Mật khẩu yếu") {
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
