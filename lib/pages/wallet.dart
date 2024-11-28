@@ -89,8 +89,8 @@ class _WalletState extends State<Wallet> {
                               height: 5.0,
                             ),
                             Text(
-                              "\$" +
-                                  wallet!, // về sau đổi thành đơn vị tiền tệ VNĐ
+                              wallet! +
+                                  "\ Đ", // về sau đổi thành đơn vị tiền tệ VNĐ
                               style: AppWidget.boldTextFeildStyle(),
                             )
                           ],
@@ -116,7 +116,7 @@ class _WalletState extends State<Wallet> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          makePayment('100');
+                          makePayment('10000');
                         },
                         child: Container(
                           padding: EdgeInsets.all(5),
@@ -124,14 +124,15 @@ class _WalletState extends State<Wallet> {
                               border: Border.all(color: Color(0xFFE9E2E2)),
                               borderRadius: BorderRadius.circular(5)),
                           child: Text(
-                            "\$" + "100", // về sau đổi thành đơn vị tiền tệ VNĐ
+                            "10000" +
+                                "\ Đ", // về sau đổi thành đơn vị tiền tệ VNĐ
                             style: AppWidget.semiBoldTextFeildStyle(),
                           ),
                         ),
                       ),
                       GestureDetector(
                         onTap: () {
-                          makePayment('500');
+                          makePayment('50000');
                         },
                         child: Container(
                           padding: EdgeInsets.all(5),
@@ -139,14 +140,15 @@ class _WalletState extends State<Wallet> {
                               border: Border.all(color: Color(0xFFE9E2E2)),
                               borderRadius: BorderRadius.circular(5)),
                           child: Text(
-                            "\$" + "500", // về sau đổi thành đơn vị tiền tệ VNĐ
+                            "50000" +
+                                "\ Đ", // về sau đổi thành đơn vị tiền tệ VNĐ
                             style: AppWidget.semiBoldTextFeildStyle(),
                           ),
                         ),
                       ),
                       GestureDetector(
                         onTap: () {
-                          makePayment('1000');
+                          makePayment('100000');
                         },
                         child: Container(
                           padding: EdgeInsets.all(5),
@@ -154,15 +156,15 @@ class _WalletState extends State<Wallet> {
                               border: Border.all(color: Color(0xFFE9E2E2)),
                               borderRadius: BorderRadius.circular(5)),
                           child: Text(
-                            "\$" +
-                                "1000", // về sau đổi thành đơn vị tiền tệ VNĐ
+                            "100000" +
+                                "\ Đ", // về sau đổi thành đơn vị tiền tệ VNĐ
                             style: AppWidget.semiBoldTextFeildStyle(),
                           ),
                         ),
                       ),
                       GestureDetector(
                         onTap: () {
-                          makePayment('2000');
+                          makePayment('200000');
                         },
                         child: Container(
                           padding: EdgeInsets.all(5),
@@ -170,7 +172,7 @@ class _WalletState extends State<Wallet> {
                               border: Border.all(color: Color(0xFFE9E2E2)),
                               borderRadius: BorderRadius.circular(5)),
                           child: Text(
-                            "\$" + "2000",
+                            "200000" + "\ Đ",
                             style: AppWidget.semiBoldTextFeildStyle(),
                           ),
                         ),
@@ -193,7 +195,7 @@ class _WalletState extends State<Wallet> {
                           borderRadius: BorderRadius.circular(8)),
                       child: Center(
                         child: Text(
-                          "Add Money",
+                          "Thêm số tiền bạn muốn",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 16.0,
